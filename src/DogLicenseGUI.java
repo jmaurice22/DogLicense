@@ -19,13 +19,13 @@ public class DogLicenseGUI {
 		JTextField yearField = null; // Initialize year field display
 		JTextField userField = null; // display user id number
 		JTextField licenseField = null; // display assigned license number
-		JButton subbtn = null; // submit button
+		JButton submitButton = null; // submit button
 		GridBagConstraints layout = null; // GUI layout
 
 		yearLabel = new JLabel("Enter User Year:"); // set year label
 		userId = new JLabel("Enter User ID:"); // set user id label
 		licenseNum = new JLabel("Assigned Dog License:"); // set license number
-		subbtn = new JButton("Submit");
+		submitButton = new JButton("Submit");
 
 		yearField = new JTextField(10);
 		yearField.setEditable(true);
@@ -79,7 +79,7 @@ public class DogLicenseGUI {
 		layout.gridx = 1;
 		layout.gridy = 3;
 		layout.insets = new Insets(10, 10, 10, 10);
-		frame.add(subbtn, layout);
+		frame.add(submitButton, layout);
 
 		frame.setVisible(true); // displays frame
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exits window when closed
@@ -87,4 +87,24 @@ public class DogLicenseGUI {
 
 	}
 
+	/*
+	TODO: Create a DogLicense class
+	 */
+	// Template for dog license
+	static class DogLicense {
+		String year;
+		int id;
+
+	}
+
+	// Function to create dog license
+	static String submit(String year, int id) {
+		String assignedNumber;
+		assignedNumber = year + id;
+		return assignedNumber;
+	}
+
+	/*
+	TODO: Create a function to take input and create a new DogLicense object
+	 */
 }

@@ -40,7 +40,7 @@ public class DogLicenseGUI {
 		userField = new JTextField(10);
 		userField.setEditable(true);
 		licenseField = new JTextField(10);
-		licenseField.setEditable(true);
+		licenseField.setEditable(false);
 
 
 		//

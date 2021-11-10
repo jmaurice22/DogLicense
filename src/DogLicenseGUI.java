@@ -1,30 +1,20 @@
-/**
- * Author: Julian.Postell@asu.edu
- * Version: 1.1
- * Date Created: 02/27/20
- * Date Last Modified
- * Updated by: Julian.Postell@asu.edu
- */
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
-
+import java.awt.*;
+import java.util.Date;  
 public class DogLicenseGUI {
 
 	public static void main(String[] args) {
 		// Frame
-		JFrame frame = null; // Initialize frame
-		JLabel yearLabel = null; // Initialize year label
-		JLabel userId = null; // Initialize user ID
-		JLabel licenseNum = null; // Initialize license number
+		JFrame frame; // Initialize frame
+		JLabel yearLabel; // Initialize year label
+		JLabel userId; // Initialize user ID
+		JLabel licenseNum; // Initialize license number
 		// Text Fields
-		JTextField yearField = null; // Initialize year field display
-		JTextField userField = null; // display user id number
-		JTextField licenseField = null; // display assigned license number
+		JTextField yearField; // Initialize year field display
+		JTextField userField; // display user id number
+		JTextField licenseField; // display assigned license number
 		// Submit Button
-		JButton submitButton = null; // submit button
+		JButton submitButton; // submit button
 		// GridBag layout
 
 
@@ -90,17 +80,19 @@ public class DogLicenseGUI {
 		frame.setVisible(true); // displays frame
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exits window when closed
 		frame.pack(); // resize window to fit components
+		
+		Date d=new Date();  
+		int year=d.getYear();
+		int currentYear=year+1900;  
 
 		JTextField finalUserField = userField;
 		JTextField finalYearField = yearField;
 		JTextField finalLicenseField1 = licenseField;
-		submitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String val1 = finalUserField.getText();
-				String val2 = finalYearField.getText();
-				String lisnum = val1 + val2;
-				finalLicenseField1.setText(lisnum + " - 21");
-			}
+		submitButton.addActionListener(e -> {
+			String val1 = finalUserField.getText();
+			String val2 = finalYearField.getText();
+			String lisnum = val1 + val2;
+			finalLicenseField1.setText(lisnum + "- " + currentYear);
 		});
 
 

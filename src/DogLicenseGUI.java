@@ -92,7 +92,7 @@ public class DogLicenseGUI {
 			String val1 = finalUserField.getText();
 			String val2 = finalYearField.getText();
 			String lisnum = val1 + val2;
-			finalLicenseField1.setText(lisnum + "- " + currentYear);
+			finalLicenseField1.setText(lisnum + "-" + currentYear);
 		});
 
 
